@@ -2,7 +2,7 @@
 #include<conio.h>
     
 int main(){
-    int len;
+    int len,k;
     printf("Enter the size of the array : ");
     scanf("%d",&len);
     int arr[len];
@@ -10,10 +10,22 @@ int main(){
     {
         scanf("%d",&arr[i]);
     }
-    printf("Reversed array : \n");
-    for (int i = (len-1); i >= 0; i--)
+    for (int i = 0; i < len; i++)
     {
-        printf("%d ",arr[i]);
+        for (int j = i+1; j < len; j++)
+        {
+            if(arr[i]>arr[j])
+            {
+                arr[i] = arr[i] + arr[j];
+                arr[j] = arr[i] - arr[j];
+                arr[i] = arr[i] - arr[j];
+            }
+        }
+        
     }
+    printf("Enter the k to find kth smallest term : ");
+    scanf("%d",&k);
+    printf("Term : %d\n",arr[k-1]);
+    printf("End !!");
     return 0;
 }
