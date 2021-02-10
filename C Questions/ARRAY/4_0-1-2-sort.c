@@ -2,7 +2,7 @@
 #include<conio.h>
     
 int main(){
-    int len, count[3];
+    int len, count[3] = { 0 };
     printf("Enter the size of the array : ");
     scanf("%d",&len);
     int arr[len];
