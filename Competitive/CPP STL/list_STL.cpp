@@ -48,5 +48,6 @@ int main()
     itr = myList.begin();
     myList.erase();
     printList(myList);
+    
     return 0;
 }
