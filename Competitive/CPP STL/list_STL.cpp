@@ -80,5 +80,11 @@ int main()
     advance(itr,1);
     l1.splice(itr, l2);
     printList(l1);
+    cout<<"EAsy Print: "<<endl;
+    for(int &val : l1)
+    {
+        cout<<val<<" ";
+    }
+    cout<<"DONE"<<endl;
     return 0;
 }
