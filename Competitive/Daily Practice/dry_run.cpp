@@ -1,42 +1,67 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 int main()
 {
-    int flag = 0;
-    float distance = 0;
-    string str[] = { "TH", "GA", "IC", "HA", "TE", "LU", "NI","CA" };
-    int str_p[8] = {800, 600, 750, 900, 1400, 1200, 1100, 1500};
-    string source;
-    string desination;
-    cin>>source;
-    cin>>desination;
-    int count =0;
-    for(string s : str)
-    {
-        if(s==source || s ==desination)
-        {
-            flag++;
-            if(flag==1)
-            {
-                distance += (-str_p[count]);
-                cout<<distance<<endl;
-            }
-            else if(flag==2)
-            {
-                distance += str_p[count];
-                cout<<distance<<endl;
-            }
-        }
-        if(flag==2)
-        {
-            cout<<"Cost is : "<<(distance/1000)*5<<endl;
-            break;
-            return 0;
-        }
-        count++;
-    }
-    cout<<"INVALID INPUT"<<endl;
+    vector<string> temp;
+    vector< vector<string> > vec;
+    temp = {"Espresso Coffee","Cappuccino Coffee","Latte Coffee"};
+    vec.push_back(temp);
+    temp = {"Plain Tea","Assam Tea","Ginger Tea","Cardamom Tea","Masala Tea","Lemon Tea","Green Tea","Organic Darjeeling Tea"};
+    vec.push_back(temp);
+    temp = {"Hot and Sour Soup","Veg Corn Soup","Tomato Soup","Spicy Tomato Soup"};
+    vec.push_back(temp);
+    temp = {"Hot Chocolate Drink","Badam Drink","Badam-Pista Drink"};
+    vec.push_back(temp);
 
+    int flag = 0;
+    char ch;
+    cin>>ch;
+    int op;
+    switch(ch){
+        case 'c':
+            cin>>op;
+            if(op<vec.at(0).size())
+            {
+                flag=1;
+                cout<<"Welcome to CCD!"<<endl;
+                cout<<"Enjoy your "<<vec.at(0).at(op-1)<<"!"<<endl;
+            }
+            break;
+        case 't':
+            cin>>op;
+            if(op<=vec.at(1).size())
+            {
+                flag=1;
+                cout<<"Welcome to CCD!"<<endl;
+                cout<<"Enjoy your "<<vec.at(1).at(op-1)<<"!"<<endl;
+            }
+            break;
+        case 's':
+            cin>>op;
+            if(op<=vec.at(2).size())
+            {
+                flag=1;
+                cout<<"Welcome to CCD!"<<endl;
+                cout<<"Enjoy your "<<vec.at(2).at(op-1)<<"!"<<endl;
+            }
+            break;
+        case 'b':
+            cin>>op;
+            if(op<=vec.at(3).size())
+            {
+                flag=1;
+                cout<<"Welcome to CCD!"<<endl;
+                cout<<"Enjoy your "<<vec.at(3).at(op-1)<<"!"<<endl;
+            }
+            break;
+        default:
+            cout<<"INVALID INPUT!"<<endl;
+    }
+    if(flag==0)
+    {
+        cout<<"INVALID INPUT!"<<endl;
+    }
     return 0;
 }

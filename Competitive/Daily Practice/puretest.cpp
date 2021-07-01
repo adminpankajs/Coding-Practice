@@ -1,37 +1,148 @@
-#include <bits/stdc++.h>
-using namespace std;
-int main() {
-string s , d;
- cin>>s>>d;
- transform(s.begin(),s.end() , s.begin(),::toupper);
- transform(d.begin(),d.end() , d.begin(),::toupper);
- string arrs[8] = {"TH" , "GA", "IC" , "HA" , "TE", "LU" ,"NI","CA"};
- float arr[8]={800,600,750,900,1400,1200,1100,1500};
- float res=0;
- int st ,ed;
- for(int i=0;i<8;i++)
- {
-     if(s==arrs[i])
-     st=i;
-     
-     if(d==arrs[i])
-     ed=i;
-  }
-  if(st==ed)
-  {
-      cout<<" INVALID INPUT";
-      return 0;
-  }
-  else
-  {
-      int i=st+1;
-      cout<<i;
-        while(i!=ed+1)
+#include <stdio.h>
+int main()
+{
+
+    char c[3][20]={"Espresso Coffee","Cappuccino Coffee","Latte Coffee"};
+
+    char t[8][30]={"Plain Tea","Assam Tea","Ginger Tea","Cardamom Tea","Masala Tea","Lemon Tea","Green Tea","Organic Darjeeling Tea"};
+
+    char s[4][20]={"Hot and Sour Soup","Veg Corn Soup","Tomato Soup","Spicy Tomato Soup"};
+
+    char b[3][20]={"Hot Chocolate Drink","Badam Drink","Badam-Pista Drink"};
+
+    char str[]="Welcome to CCD!\nEnjoy your ";
+
+    char ch;
+
+    int  item, i;
+
+    scanf("%c",&ch);
+
+    scanf("%d",&item);
+
+    if(ch=='c')
+
+    {
+
+        for(i=0; i<3; i++)
+
         {
-            res+=(arr[i]);
-            i=(i+1)%8;
+
+            if(item==i+1)
+
+            {
+
+                printf("Welcome to CCD!\nEnjoy your %s!",c[i]);
+
+                break;
+
+            }
+
         }
-        cout<<(ceil)(res*0.005);
-        return 0;
- }
+#include <stdio.h>
+int main()
+{
+
+    char c[3][20]={"Espresso Coffee","Cappuccino Coffee","Latte Coffee"};
+
+    char t[8][30]={"Plain Tea","Assam Tea","Ginger Tea","Cardamom Tea","Masala Tea","Lemon Tea","Green Tea","Organic Darjeeling Tea"};
+
+    char s[4][20]={"Hot and Sour Soup","Veg Corn Soup","Tomato Soup","Spicy Tomato Soup"};
+
+    char b[3][20]={"Hot Chocolate Drink","Badam Drink","Badam-Pista Drink"};
+
+    char str[]="Welcome to CCD!\nEnjoy your ";
+
+    char ch;
+
+    int  item, i;
+
+    scanf("%c",&ch);
+
+    scanf("%d",&item);
+
+    if(ch=='c')
+
+    {
+
+        for(i=0; i<3; i++)
+
+        {
+
+            if(item==i+1)
+
+            {
+
+                printf("Welcome to CCD!\nEnjoy your %s!",c[i]);
+
+                break;
+
+            }
+
+        }
+ for(i=0; i<4; i++)
+
+        {
+
+            if(item==i+1)
+
+            {
+
+                printf("Welcome to CCD!\nEnjoy your %s!",s[i]);
+
+                break;
+
+            }
+
+        }
+
+        if(i==4)
+
+        {
+
+            printf("INVALID OPTION!");
+
+        }
+
+    }
+
+    else if(ch=='b')
+
+    {
+
+        for(i=0; i<3; i++)
+
+        {
+
+            if(item==i+1)
+
+            {
+
+                printf("Welcome to CCD!\nEnjoy your %s!",b[i]);
+
+                break;
+
+            }
+
+        }
+ if(i==3)
+
+        {
+
+            printf("INVALID OPTION!");
+
+        }
+
+    }
+
+    else
+
+    {
+
+        printf("INVALID INPUT!");
+
+    }
+
+    return 0;
+
 }
