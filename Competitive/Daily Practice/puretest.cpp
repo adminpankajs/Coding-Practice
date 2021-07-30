@@ -1,148 +1,41 @@
-#include <stdio.h>
+#include<bits/stdc++.h>
+
+using namespace std;
+
 int main()
 {
-
-    char c[3][20]={"Espresso Coffee","Cappuccino Coffee","Latte Coffee"};
-
-    char t[8][30]={"Plain Tea","Assam Tea","Ginger Tea","Cardamom Tea","Masala Tea","Lemon Tea","Green Tea","Organic Darjeeling Tea"};
-
-    char s[4][20]={"Hot and Sour Soup","Veg Corn Soup","Tomato Soup","Spicy Tomato Soup"};
-
-    char b[3][20]={"Hot Chocolate Drink","Badam Drink","Badam-Pista Drink"};
-
-    char str[]="Welcome to CCD!\nEnjoy your ";
-
-    char ch;
-
-    int  item, i;
-
-    scanf("%c",&ch);
-
-    scanf("%d",&item);
-
-    if(ch=='c')
-
-    {
-
-        for(i=0; i<3; i++)
-
-        {
-
-            if(item==i+1)
-
-            {
-
-                printf("Welcome to CCD!\nEnjoy your %s!",c[i]);
-
-                break;
-
-            }
-
-        }
-#include <stdio.h>
-int main()
-{
-
-    char c[3][20]={"Espresso Coffee","Cappuccino Coffee","Latte Coffee"};
-
-    char t[8][30]={"Plain Tea","Assam Tea","Ginger Tea","Cardamom Tea","Masala Tea","Lemon Tea","Green Tea","Organic Darjeeling Tea"};
-
-    char s[4][20]={"Hot and Sour Soup","Veg Corn Soup","Tomato Soup","Spicy Tomato Soup"};
-
-    char b[3][20]={"Hot Chocolate Drink","Badam Drink","Badam-Pista Drink"};
-
-    char str[]="Welcome to CCD!\nEnjoy your ";
-
-    char ch;
-
-    int  item, i;
-
-    scanf("%c",&ch);
-
-    scanf("%d",&item);
-
-    if(ch=='c')
-
-    {
-
-        for(i=0; i<3; i++)
-
-        {
-
-            if(item==i+1)
-
-            {
-
-                printf("Welcome to CCD!\nEnjoy your %s!",c[i]);
-
-                break;
-
-            }
-
-        }
- for(i=0; i<4; i++)
-
-        {
-
-            if(item==i+1)
-
-            {
-
-                printf("Welcome to CCD!\nEnjoy your %s!",s[i]);
-
-                break;
-
-            }
-
-        }
-
-        if(i==4)
-
-        {
-
-            printf("INVALID OPTION!");
-
-        }
-
-    }
-
-    else if(ch=='b')
-
-    {
-
-        for(i=0; i<3; i++)
-
-        {
-
-            if(item==i+1)
-
-            {
-
-                printf("Welcome to CCD!\nEnjoy your %s!",b[i]);
-
-                break;
-
-            }
-
-        }
- if(i==3)
-
-        {
-
-            printf("INVALID OPTION!");
-
-        }
-
-    }
-
-    else
-
-    {
-
-        printf("INVALID INPUT!");
-
-    }
-
-    return 0;
-
+	int H[] = {20, 15, 10, 5, 25};
+	int h_size = sizeof(H)/sizeof(H[0]);
+	int B[] = {5, 10, 15, 20, 25, 30, 4, 9, 14, 19};
+	int b_size = sizeof(B)/sizeof(B[0]);
+	int ans[b_size] = {-1};
+	// cout<<h_size<<" "<<b_size<<endl;
+	for (int i = 0; i <b_size; i++)
+	{
+		cout<<ans[i]<<" ";
+	}
+	cout<<endl;
+	for (int i = 0; i < b_size; i++)
+	{
+		for (int j = 0; j < h_size; j++)
+		{
+			if(ans[b_size-i-1] == -1)
+			{
+				ans[b_size-i-1] = b_size-i-1;
+				cout<<b_size-i-1<<" : "<<ans[b_size-i-1]<<endl;
+			}
+			if(ans[b_size-i-1]>0 && H[j] >= B[i])
+			{
+				ans[b_size-i-1] -= 1;
+			}
+		}
+	}
+	for (int i = 0; i < h_size; i++)
+	{
+		cout<<ans[i]<<" ";
+	}
+	cout<<endl;
+	
+
+	return 0;
 }

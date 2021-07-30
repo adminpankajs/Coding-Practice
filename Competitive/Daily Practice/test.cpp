@@ -1,52 +1,40 @@
 #include<iostream>
-#include<fstream>
-#include<string>
-#include <bits/stdc++.h>
-
+#include<string.h>
+#include<vector>
 using namespace std;
-
-ifstream infile("input.txt");
-ofstream outfile("output.txt", ios::trunc);
-
-void solve(string input, string length, string dir)
-{
-    int count = 0;
-    string str1, str2, str3;
-    if(dir=="L")
+int main(){
+    string str;
+    cin>>str;
+    string temp;
+    bool flag=false;
+    vector<string> vc{"break", "case", "continue", "default", "defer", "else", "for", "func", "goto", "if", "map", "range", "return", "struct", "type", "var"};
+    for(char ch : str)
     {
-        str1 = input.substr(0,stoi(length));
-        str2 = input.substr(stoi(length));
-        str3 = str2.append(str1);
-    }
-    else
-    {
-        str1 = input.substr(0,input.size()-stoi(length));
-        str2 = input.substr(input.size()-stoi(length));
-        str3 = str2.append(str1);
-    }
-    outfile<<str3;
-}
-
-int main()
-{
-    if(infile.fail() || outfile.fail())
-    {
-        cout<<"No such file found !!"<<endl;
-    }
-    else
-    {
-        string input;
-        while (infile>>input)
+        cout<<ch<<endl;
+        if(flag==true)
         {
-            string str,length,dir;
-            str = input.substr(0,input.find(','));
-            input = input.substr(input.find(',')+1);
-            length = input.substr(0,input.find(','));
-            input = input.substr(input.find(',')+1);
-            dir = input.substr(0,input.find(','));
-            solve(str, length, dir);
+            break;
         }
-        cout<<"Success !!"<<endl;
+        cout<<ch<<endl;
+        if(ch != ' ')
+        {
+            temp.push_back(ch);
+        }
+        else  
+        {
+            cout<<temp<<endl;
+            for(string x : vc)
+            {
+                cout<<"CHANGES "<<endl;
+                cout<<x<<" : "<<temp<<endl;
+                if(x==temp){
+                    flag=true;
+                }
+            } 
+            temp.clear();  
+        }   
+        cout<<flag<<endl;
+
     }
-    return 0;
+
 }
