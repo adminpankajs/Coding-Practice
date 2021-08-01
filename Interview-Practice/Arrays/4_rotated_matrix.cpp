@@ -34,7 +34,6 @@ int main()
         for(int j=0;j<col;j++)
         {
             tmp.push_back(mat[j][i]);
-            // newmat[i][j] = mat[j][i];
         }
         newmat.push_back(tmp);
     }
